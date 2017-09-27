@@ -5,7 +5,22 @@
 
 ## Overview
 
-PID controller with user defined gain variables. 
+V1.0
+Using PID.hpp class controller the main file runs a 100 incremented for loop to calculate the output of a PID system while printing the output to the console.
+
+## Upcoming Improvements
+
+V1.1
+- Use a while loop that exits when the output reaches a certain tolerance relative to the setpoint.
+
+- Create a control() method for PID class that implements the while loop to allow for simple execution
+
+- Create a setDt() method for PID class
+
+- Create a track(double newSetPoint) method for PID class
+
+- Implement plotting functions
+
 
 ## Standard install via command-line
 ```
@@ -18,12 +33,3 @@ make
 Run tests: ./test/cpp-test
 Run program: ./app/shell-app
 ```
-
-## Improvements
-
-- Next version could use a while loop until the error is within a user defined tolerance.
-
-- Add a control method for class pid that implements the previously discussed while loop
-
-- Add plotting capabilities.
-
