@@ -67,6 +67,18 @@ double PID::getKd()
 // subfunction to calculate the increment neccessary to converge previous value (pv) to setpoint
 double PID::calculate(double setpoint, double pv)
 {
-return 0;
+ // error is computed
+ double error = setpoint - pv;
+
+ // error is integrated over dt
+ integral +=  ki * error * dt;
+
+ // new velocity is calculated 
+ double newVel= kp * error + integral + (error - preError) * kd * (1/dt);
+
+ // current error is set to previous error
+ preError=error;
+
+ return newVel;
 }
 
