@@ -82,6 +82,6 @@ double PID::calculate(double setpoint, double pv)
 /// current error is set to previous error
  preError=error;
 
- return newVel;
+ return (newVel);
 }
 
